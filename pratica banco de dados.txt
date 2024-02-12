@@ -1,12 +1,8 @@
-pratica banco de dados
-
-
 create database cadastro;
-defaut character set utf8
+defaut character set utf8 
 defaut collate utf8_general_ci;
 
-
-create table pessoas (
+create table pessoas ( 
 id int not null auto_increment,
 nome varchar(30) not null,
 nascimento date,
@@ -16,3 +12,16 @@ altura decimal(3, 2),
 nacionalidade varchar(20) defaut 'Brasil',
 primary key (id),
 ) defaut charset = utf8;
+
+insert into pessoas
+(id, nome, nascimento, sexo, peso, altura, nacionalidade)
+
+values
+(defaut, 'Walter', '2004-06-10', 'M', '60.2', '1,73', 'Brasil');
+(defaut, 'robson', '2002-07-10', 'M', '70.2', '1,63', 'Portugal');
+(defaut, 'giovana', '2001-02-10', 'F', '50.2', '1,53', 'Brasil');
+
+
+select * from pessoas;
+
+
