@@ -2,6 +2,7 @@ create database cadastro;
 defaut character set utf8 
 defaut collate utf8_general_ci;
 
+CRIANDO TABELA
 create table pessoas ( 
 id int not null auto_increment,
 nome varchar(30) not null,
@@ -13,6 +14,7 @@ nacionalidade varchar(20) defaut 'Brasil',
 primary key (id),
 ) defaut charset = utf8;
 
+ADICIONANDO DADOS NA TABELA
 insert into pessoas
 (id, nome, nascimento, sexo, peso, altura, nacionalidade)
 
@@ -24,4 +26,61 @@ values
 
 select * from pessoas;
 
+ALTERANDO TABELA E ADICIONANDO NOVO CAMPO COM COMANDO
+alter table pessoas;
+add column profissao varchar(10);
 
+
+ELIMINAR COLUNA
+alter table pessoas;
+drop column profissao;
+
+
+ESCOLHENDO POSICAO DA COLUNA
+alter table pessoas
+add column profissao varchar(10) after nome;
+PARA ADICIONAR COMO PRIMEIRO ADICIONAR COMANDO COMO FIRST
+
+MODIFICAR COLUMN DA TABELA
+alter table pessoas
+modify column profissao varchar(20) not null defaut '';
+
+RENOMEANDO TABELA
+alter table pessoas
+raname to primeiroBanco;
+
+
+CRIANDO MAIS UMA TABELA 
+create table if not exists cursos (
+nome varchar(30) not null unique,
+descricao text,
+carga int unsigned,
+totalaulas int,
+ano year defaut '2016'
+) defaut charset = utf8;
+
+alter table cursos
+add column idcurso int first;
+
+alter table cursos
+add primery key (idcurso);
+
+
+
+CRIANDO TABELA PARA APAGAR
+create table if not exists teste (
+id int,
+nome varchar(10),
+idade int
+);
+
+insert into teste value
+('1', 'Pedro', '22'),
+('2', 'wlater', '25'),
+('3', 'lais', '55'),
+
+
+select * from teste;
+
+APAGAR TABELA
+drop table if exists teste;
